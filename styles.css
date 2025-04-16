@@ -1,0 +1,712 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #f5f5dc;
+}
+
+
+section {
+  padding: 4em 1em;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1); /* El tamaño inicial */
+  transition: transform 1s ease, opacity 1s ease;
+  opacity: 0;
+}
+
+/* Animación para efectos visuales */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+section.animar-slide {
+  animation: slideInFromBottom 1.5s ease-out forwards;
+}
+
+section.animar-zoom {
+  animation: fadeInZoom 1.5s ease-out forwards;
+}
+.animar {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease forwards;
+}
+section.animar {
+  animation: fadeInUp 1.5s ease 0.5s forwards; 
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Portada */
+.portada {
+  background: url('assets/portada.jpg') no-repeat center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInBackground 2s forwards; /* Asegura que la imagen de fondo se muestre correctamente */
+}
+
+/* Animación de la imagen de fondo */
+@keyframes fadeInBackground {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Títulos de la portada */
+.texto-portada h1 {
+  font-size: 3.8em;
+  color: rgb(255, 255, 253);
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+  margin-bottom: 0.3em;
+  animation: fadeInUp 1.5s ease-out 2s forwards; /* El retraso hace que las letras salgan después */
+}
+
+.texto-portada h2 {
+  font-size: 3.5em;
+  color: #fff;
+  font-family: "Pinyon Script", cursive;
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+  margin-top: 0.3em;
+  animation: fadeInUp 1.5s ease-out 2.5s forwards; /* Un poco más de retraso para las letras */
+}
+
+.texto-portada p {
+  font-size: 1.8em;
+  color: #fff;
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  margin-top: 0.5em;
+  animation: fadeInUp 1.5s ease-out 3s forwards; /* Aumentando el retraso */
+}
+
+/* Animación de entrada para los textos */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Estilos para el indicador de scroll */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fffffffd;
+  font-size: 1.5em;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 18px solid #c579169a;
+  margin-bottom: 5px;
+  animation: bounce 2s infinite; /* Animación de rebote */
+}
+
+.arrow:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.arrow:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-10px);
+  }
+  60% {
+      transform: translateY(-5px);
+  }
+}
+
+/* Mensaje  - cancion */
+
+.mensaje {
+  position: relative;
+  background: url('assets/fondo-mensaje1.jpg') no-repeat center/cover;
+  padding: 4em 1em;
+  color: #111;
+  overflow: hidden;
+}
+
+.mensaje h3{
+  position: relative;
+  z-index: 1;
+  color: #111;
+} 
+.mensaje h4 {
+  font-family: "Tangerine";
+  font-size: 25px;
+  margin-top: 5px;
+  position: relative;
+  z-index: 1;
+  color: #111;
+}
+
+.audio-player {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.audio-player button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.audio-player svg {
+  fill: none;
+  stroke: #b88a20;
+  transition: 0.3s;
+}
+
+.audio-player button:hover svg {
+  stroke: #d4aa2c;
+}
+
+/* Nuevo: canvas de la onda */
+#waveform {
+  height: 40px;
+  flex: 1;
+}
+
+
+
+
+/* agradecimiento */
+
+.agradecer{
+  background: url('assets/decorativo1.jpg') no-repeat center/cover;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.agradecer h1{
+  font-family: "Pinyon Script", cursive;
+  font-size: 3em;
+}
+.agradecer h3{
+  font-family: "Tangerine", cursive;
+  font-size: 2.5em;
+}
+
+/* Mi gran día */
+
+.cuenta {
+  position: relative;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+
+.cuenta::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('assets/fondodesemfoque.jpg') no-repeat center/cover;
+  filter: blur(3px);
+  
+}
+
+.cuenta h1{
+  position: relative;
+  color: #111;
+  font-family:"Tangerine", cursive;
+  font-size: 4em;
+  line-height: 1px;
+  margin-top: 4px;
+  transform: translateY(1em);
+  
+
+}
+.cuenta h3 {
+  position: relative;
+  transform: translateY(4em);
+  font-size: 10px;
+
+}
+
+#contador {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.5em;
+  margin-top: 2em;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Números del contador */
+.numero {
+  font-size: 2.8em;
+  color: #fff;
+  position: relative;
+  animation: resplandor 5s ease-in-out infinite alternate;
+}
+
+/* Etiquetas debajo de cada número */
+.etiqueta {
+  font-size: 0.9em;
+  color: #ddd;
+  text-align: center;
+  display: block;
+  margin-top: 0.3em;
+}
+
+/* Puntos separadores */
+.separador {
+  font-size: 2.5em;
+  color: #fff;
+  margin: 0 0.2em;
+}
+
+/* Línea animada que recorre debajo */
+#contador::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  animation: recorrer 3s linear infinite;
+}
+
+/* Efecto de brillo/resplandor en los números */
+@keyframes resplandor {
+  0% { text-shadow: 0 0 5px #fff, 0 0 10px #ccc; }
+  100% { text-shadow: 0 0 15px #fff, 0 0 25px #ccc; }
+}
+
+/* Animación de la línea */
+@keyframes recorrer {
+  0% { left: -100%; }
+  50% { left: 0; }
+  100% { left: 100%; }
+}
+
+
+/* Lugar */
+
+.lugar{
+  background: url('assets/decorativo2.jpg') no-repeat center/cover;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.lugar h1{
+  font-family: "Pinyon Script", cursive;
+  font-size: 3em;
+  color: #111;
+  margin-bottom: 0.5em;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ccc;
+}
+
+.lugar h3{
+  font-family: "Tangerine", cursive;
+  font-size: 2.5em;
+  color: #111;
+  margin-bottom: 1px;
+}
+.lugar h4{
+  font-size: 0.em;
+  color: #111;
+  margin-bottom: 1em;
+}
+.boton-ubicacion {
+  display: inline-block;
+  padding: 1em 2em;
+  background: gold;
+  color: #111;
+  font-size: 1.5em;
+  text-decoration: none;
+  border-radius: 30px;
+  border: 2px solid gold;
+  transition: 0.3s;
+  margin-top: 1em;
+}
+
+.boton-ubicacion:hover {
+  background: transparent;
+  color: rgb(17, 17, 17);
+}
+
+/* Itinerario */
+.itinerario {
+  background: url('assets/intinerario1.jpg') no-repeat center/cover;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em;
+}
+
+.itinerario h3 {
+  font-family: "Tangerine", cursive;
+  font-size: 3em;
+  color: #111;
+  margin-bottom: 0.5em;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ccc;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 1.5em 0;
+  font-size: 1.5em;
+  color: #222;
+  text-shadow: 0 0 3px #fff;
+  font-family: "Pinyon Script";
+}
+
+/* Línea + mariposa */
+.linea-itinerario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.mariposa {
+  font-size: 1.2em; /* más pequeña */
+  color: #c59d5f;
+  animation: brillar 2s infinite alternate;
+}
+
+.conector {
+  width: 2px;
+  height: 50px;
+  background: #c59d5f;
+}
+
+/* Animación de iluminación */
+@keyframes brillar {
+  0% {
+    text-shadow: 0 0 5px #ffc107, 0 0 10px #ffecb3;
+    opacity: 0.7;
+  }
+  100% {
+    text-shadow: 0 0 15px #ffc107, 0 0 30px #ffe082;
+    opacity: 1;
+  }
+}
+
+/* Imágenes sin fondo, más grandes */
+ul li img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* Confirmar */
+.confirmar {
+  background: url('assets/fondo3.jpg') no-repeat center/cover;
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.confirmar h1 {
+  font-family: "Tangerine", cursive;
+  font-size: 3em;
+  color: #111;
+  margin-bottom: 0.5em;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ccc;
+}
+
+/* Vestimenta */
+.vestimenta {
+  background: url('assets/fondo3.jpg') no-repeat center/cover;
+  height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.vestimenta h1 {
+  font-family: "Tangerine", cursive;
+  font-size: 3em;
+  color: #111;
+  margin-bottom: 0.5em;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ccc;
+}
+
+/* Lluvia de sobres */
+.sobreslluvia {
+  background: url('assets/fondo3.jpg') no-repeat center/cover;
+  height: 42vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.sobreslluvia h1 {
+  font-family: "Tangerine", cursive;
+  font-size: 3em;
+  color: #111;
+  margin-bottom: 0.5em;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ccc;
+}
+.sobreslluvia h3,h4,h5 {
+  font-size: 1.5em;
+  color: #111;
+  margin-top: -1em;
+}
+
+
+
+/* Inputs y Botones */
+
+input, button {
+  padding: 0.7em;
+  margin: 0.5em;
+  font-size: 1em;
+  border: 2px solid gold;
+  background: transparent;
+  color: #000000;
+  border-radius: 8px;
+}
+
+button:hover {
+  background: gold;
+  color: #111;
+}
+
+iframe {
+  border-radius: 12px;
+}
+
+img {
+  max-width: 90%;
+  border-radius: 12px;
+  margin: 1em 0;
+}
+
+/* Playlist */
+
+.playlist {
+  background: url('assets/fondo3.jpg') no-repeat center/cover;
+  height: 28vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em;
+}
+
+.playlist h1 {
+  font-family: "Tangerine", cursive;
+  font-size: 3em;
+  
+}
+
+#formPlaylist {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#formPlaylist input {
+  padding: 0.6em 1em;
+  border: 2px solid #f7c873;
+  border-radius: 1.5em;
+  font-size: 1em;
+  width: 250px;
+}
+
+#formPlaylist button {
+  background: #f7c873;
+  border: none;
+  padding: 0.6em;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#formPlaylist button:hover {
+  background: #f0b24a;
+}
+
+.icono-play {
+  width: 24px;
+  height: 24px;
+}
+
+#mensajePlaylist {
+  margin-top: 1em;
+  font-size: 1em;
+  color: #774f00;
+}
+
+/* Sección de agradecimiento */
+
+.agradecimientos {
+  background: url('assets/decorativo1.jpg') no-repeat center/cover;
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.agradecimientos h1 {
+  font-family: "Pinyon Script", cursive;
+  font-size: 1.7em;
+  color: #111;
+  margin-bottom: 0.5em;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ccc;
+}
+
+/* Estilo para la galería */
+.galeria {
+  display: flex;
+  flex-direction: column; /* Coloca las imágenes en una columna */
+  justify-content: center;
+  align-items: center; /* Alinea las imágenes al centro */
+  gap: 2em; /* Espacio entre imágenes */
+  margin: 4em 0;
+  overflow: hidden;
+}
+
+/* Estilo para las imágenes */
+.galeria img {
+  width: 80%; /* Ajusta el tamaño de las imágenes */
+  max-width: 400px; /* Tamaño máximo de las imágenes */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+/* Efecto de luz neón en las imágenes */
+.galeria img::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, hwb(51 6% 20% / 0.8), rgba(212, 12, 12, 0));
+  opacity: 0;
+  border-radius: 12px;
+  animation: neón 3s infinite alternate;
+}
+
+@keyframes neón {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Animación para las imágenes cuando se pasa el ratón */
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgb(224, 134, 49);
+}
+
+
+/* Calendario */
+
+.calendario a {
+  
+  display: inline-block;
+  padding: 1em 1em;
+  border: 2px solid gold;
+  border-radius: 30px;
+  color: gold;
+  text-decoration: none;
+  font-size: 1.5em;
+  transition: 0.3s;
+}
+
+.calendario a:hover {
+  background: gold;
+  color: #111;
+}

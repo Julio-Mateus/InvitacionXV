@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mis XV Años - Any</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <section class="portada">
+    <div class="texto-portada animar">
+        <h1>MIS XV AÑOS</h1>
+        <h2>Any</h2>
+        <p>16 DE JUNIO 2025</p>
+    </div>
+    <div class="scroll-indicator">
+        <p>Desliza</p>
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+    </div>
+  </section>
+
+  <section class="mensaje">
+    <h3>"Te invito a celebrar el comienzo de un capítulo muy especial en mi vida, lleno de ilusiones, nuevos sueños y momentos inolvidables."</h3>
+    <h4>Escucha aquí la canción</h4>
+  
+    <div class="audio-player">
+      <button id="play-button">
+        <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#b88a20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+      </button>
+      <canvas id="waveform" width="200" height="40"></canvas>
+    </div>
+    
+    <audio id="audio" src="assets/Veo en ti la luz.mp3"></audio>    
+  </section>
+  
+  <section class="agradecer">
+    <h3>Con la bendición de Dios y en compañía de mis padres.</h3>
+    <h1>Silvia Juliana Mateus</h1>
+    <h1>Mario Rodriguez</h1>
+    <h3>Nos complace invitarte a ser parte de este gran día.</h3>
+  </section>
+
+  <section class="cuenta">
+    <h1>Mi gran día:</h1>
+    <h1>16 De Junio</h1>
+    <h1>2025</h1>
+    <h3>ESTO FALTA PARA MI DÍA SOÑADO</h3>
+    <div id="contador">
+      <div class="tiempo">
+        <span id="dias">00</span>
+        <p>Días</p>
+      </div>
+      <div class="tiempo">
+        <span id="horas">00</span>
+        <p>Horas</p>
+      </div>
+      <div class="tiempo">
+        <span id="minutos">00</span>
+        <p>Minutos</p>
+      </div>
+      <div class="tiempo">
+        <span id="segundos">00</span>
+        <p>Segundos</p>
+      </div>
+    </div>    
+  </section>
+
+  <section class="lugar">
+    <h1>¿Dónde y Cuándo?</h1>
+    <img src="assets/lugar.jpg" alt="iglesia">
+    <h3>Ubicación</h3>
+    <h2>FINCA JOSE MARIA</h2>
+    <h4>YOPAL - CASANARE</h4>
+    <a class="boton-ubicacion" href="https://maps.app.goo.gl/khCA4e9R6pPF8LCZA" target="_blank">
+      Ver Mapa
+    </a>
+  </section>
+
+  <section class="itinerario">
+    <h3>Te compartimos los dettalles de la celebración</h3>
+    <ul>
+      <li>
+        <div class="linea-itinerario">
+          <span class="mariposa">🦋</span>
+          <div class="conector"></div>
+        </div>
+        <img src="assets/princesa1.png" alt="Recepción">
+        Recepción: 5:00 PM
+      </li>
+      <li>
+        <div class="linea-itinerario">
+          <span class="mariposa">🦋</span>
+          <div class="conector"></div>
+        </div>
+        <img src="assets/comida2.png" alt="Cena">
+        Cena: 7:00 PM
+      </li>
+      <li>
+        <div class="linea-itinerario">
+          <span class="mariposa">🦋</span>
+          <div class="conector"></div>
+        </div>
+        <img src="assets/bailar1.png" alt="Fiesta">
+        Fiesta: 8:00 PM
+      </li>
+    </ul>
+  </section>
+  
+  <section class="confirmar">
+    <h1>Confirma tu Asistencia</h1>
+    <form id="formulario">
+      <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <button type="submit">Confirmar</button>
+    </form> 
+    <h2>"Tu presencia es el regalo más bonito. ¡Confírmanos si podrás acompañarnos!"</h2>
+  </section>
+  
+
+  <section class="vestimenta">
+    <h1>Código de Vestimenta</h1>
+    <img src="assets/vestuario2.png" alt="Formal">
+    <p>FORMAL</p>
+  </section>
+
+  <section class="sobreslluvia">
+    <h1>Lluvia de Sobres</h1>
+    <img src="assets/sobres.png" alt="sobre">
+    <h2>Cuenta Bancaria</h2>
+    <h4>Nequi:</h4>
+    <h3>Silvia Mateus</h3>
+    <h5>3123774090</h5>
+  </section>
+
+  <section class="playlist">
+    <h1>¿Me ayudas con la playlist?</h1>
+    <h3>Agrega aquí tu canción favorita y que no puede faltar.</h3>
+  
+    <form id="formPlaylist">
+      <input type="text" id="cancion" placeholder="Nombre o link de la canción" required>
+      <button type="submit">
+        <img src="assets/play-icon.png" alt="Agregar canción" class="icono-play">
+      </button>
+    </form>
+    
+    <div id="mensajePlaylist"></div>
+  </section>
+
+  <section class="agradecimientos">
+    <h1>"Gracias por estar presente en este capítulo tan especial de mi vida. Tu compañía lo hace aún más inolvidable."</h1>
+  
+  </section>
+  
+
+  <section class="galeria">
+    <img src="assets/1.jpg" class="animar" alt="Foto 1">
+    <img src="assets/2.jpg" class="animar" alt="Foto 2">
+    <img src="assets/3.jpg" class="animar" alt="Foto 3">
+  </section>
+
+  <section class="calendario">
+    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV+Años+Any&dates=20250616T170000Z/20250616T230000Z&details=Mis+XV+Años+de+Any" target="_blank">Añadir a mi Calendario</a>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
