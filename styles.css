@@ -260,7 +260,7 @@ section.animar {
 
 .agradecer{
   background: url('assets/fondo-mensaje1.jpg') no-repeat center/cover;
-  height: 65vh;
+  height: 68vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -387,7 +387,7 @@ section.animar {
 
 .lugar{
   background: url('assets/decorativo2.jpg') no-repeat center/cover;
-  height: 65vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -433,7 +433,7 @@ section.animar {
 /* Itinerario */
 .itinerario {
   background: url('assets/fondo3.jpg') no-repeat center/cover;
-  height: 75vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
