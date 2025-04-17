@@ -3,6 +3,29 @@ body {
   overflow-x: hidden;
   background-color: #f5f5dc;
 }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 60%),
+              radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.1) 0%, transparent 60%);
+  animation: moverLuz 20s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes moverLuz {
+  0% {
+    background-position: 20% 30%, 80% 70%;
+  }
+  50% {
+    background-position: 25% 35%, 75% 65%;
+  }
+  100% {
+    background-position: 20% 30%, 80% 70%;
+  }
+}
+
 
 
 section {
@@ -71,7 +94,7 @@ section.animar {
 /* Portada */
 .portada {
   background: url('assets/portada.jpg') no-repeat center/cover;
-  height: 100vh;
+  height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,19 +117,19 @@ section.animar {
 
 /* Títulos de la portada */
 .texto-portada h1 {
-  font-size: 3.8em;
+  font-size: 3.5em;
   color: rgb(255, 255, 253);
-  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.582);
   letter-spacing: 1px;
   margin-bottom: 0.3em;
   animation: fadeInUp 1.5s ease-out 2s forwards; /* El retraso hace que las letras salgan después */
 }
 
 .texto-portada h2 {
-  font-size: 3.5em;
+  font-size: 3.8em;
   color: #fff;
   font-family: "Pinyon Script", cursive;
-  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.555);
   letter-spacing: 1px;
   margin-top: 0.3em;
   animation: fadeInUp 1.5s ease-out 2.5s forwards; /* Un poco más de retraso para las letras */
@@ -115,7 +138,7 @@ section.animar {
 .texto-portada p {
   font-size: 1.8em;
   color: #fff;
-  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.637);
   margin-top: 0.5em;
   animation: fadeInUp 1.5s ease-out 3s forwards; /* Aumentando el retraso */
 }
@@ -131,8 +154,6 @@ section.animar {
     transform: translateY(0);
   }
 }
-
-
 
 /* Estilos para el indicador de scroll */
 .scroll-indicator {
@@ -238,7 +259,7 @@ section.animar {
 /* agradecimiento */
 
 .agradecer{
-  background: url('assets/decorativo1.jpg') no-repeat center/cover;
+  background: url('assets/fondo-mensaje1.jpg') no-repeat center/cover;
   height: 65vh;
   display: flex;
   align-items: center;
@@ -246,12 +267,14 @@ section.animar {
   flex-direction: column;
 }
 .agradecer h1{
-  font-family: "Pinyon Script", cursive;
+  font-family: "Tangerine", cursive;
   font-size: 3em;
+  text-shadow: 0 0 5px #000000, 0 0 10px #be9613cc;
 }
-.agradecer h3{
+.agradecer h2{
   font-family: "Tangerine", cursive;
   font-size: 2.5em;
+  text-shadow: 0 0 5px #000000, 0 0 10px #ebebebcc;
 }
 
 /* Mi gran día */
@@ -281,6 +304,7 @@ section.animar {
 .cuenta h1{
   position: relative;
   color: #111;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ccc;
   font-family:"Tangerine", cursive;
   font-size: 4em;
   line-height: 1px;
@@ -293,6 +317,7 @@ section.animar {
   position: relative;
   transform: translateY(4em);
   font-size: 10px;
+  text-shadow: 0 0 5px #eeeeee, 0 0 10px #ccc;
 
 }
 
@@ -312,6 +337,7 @@ section.animar {
   color: #fff;
   position: relative;
   animation: resplandor 5s ease-in-out infinite alternate;
+
 }
 
 /* Etiquetas debajo de cada número */
@@ -321,6 +347,7 @@ section.animar {
   text-align: center;
   display: block;
   margin-top: 0.3em;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ccc;
 }
 
 /* Puntos separadores */
@@ -405,7 +432,7 @@ section.animar {
 
 /* Itinerario */
 .itinerario {
-  background: url('assets/intinerario1.jpg') no-repeat center/cover;
+  background: url('assets/fondo3.jpg') no-repeat center/cover;
   height: 75vh;
   display: flex;
   align-items: center;
@@ -433,9 +460,9 @@ ul li {
   align-items: center;
   gap: 25px;
   margin: 1.5em 0;
-  font-size: 1.5em;
+  font-size: 2em;
   color: #222;
-  text-shadow: 0 0 3px #fff;
+  text-shadow: 0 0 3px #000000;
   font-family: "Pinyon Script";
 }
 
@@ -447,7 +474,7 @@ ul li {
   gap: 5px;
 }
 
-.mariposa {
+.estrella {
   font-size: 1.2em; /* más pequeña */
   color: #c59d5f;
   animation: brillar 2s infinite alternate;
@@ -535,8 +562,6 @@ ul li img {
   margin-top: -1em;
 }
 
-
-
 /* Inputs y Botones */
 
 input, button {
@@ -568,7 +593,7 @@ img {
 
 .playlist {
   background: url('assets/fondo3.jpg') no-repeat center/cover;
-  height: 28vh;
+  height: 38vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -623,7 +648,7 @@ img {
 /* Sección de agradecimiento */
 
 .agradecimientos {
-  background: url('assets/decorativo1.jpg') no-repeat center/cover;
+  background: url('assets/fondo-mensaje1.jpg') no-repeat center/cover;
   height: 25vh;
   display: flex;
   align-items: center;
@@ -631,8 +656,8 @@ img {
   flex-direction: column;
 }
 .agradecimientos h1 {
-  font-family: "Pinyon Script", cursive;
-  font-size: 1.7em;
+  font-family: "Tangerine", cursive;
+  font-size: 2em;
   color: #111;
   margin-bottom: 0.5em;
   text-shadow: 0 0 5px #fff, 0 0 10px #ccc;

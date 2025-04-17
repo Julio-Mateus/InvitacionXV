@@ -35,7 +35,6 @@ sections.forEach(section => {
 });
 
 
-/* repruductor de musica */ 
 const audio = document.getElementById('audio');
 const playButton = document.getElementById('play-button');
 const playIcon = document.getElementById('play-icon');
@@ -47,10 +46,10 @@ let playing = false;
 playButton.addEventListener('click', () => {
   if (playing) {
     audio.pause();
-    playIcon.innerHTML = `<polygon points="5 3 19 12 5 21 5 3"></polygon>`; // play icon
+    playIcon.innerHTML = `<polygon points="5 3 19 12 5 21 5 3"></polygon>`;
   } else {
     audio.play();
-    playIcon.innerHTML = `<line x1="6" y1="4" x2="6" y2="20"></line><line x1="18" y1="4" x2="18" y2="20"></line>`; // pause icon
+    playIcon.innerHTML = `<line x1="6" y1="4" x2="6" y2="20"></line><line x1="18" y1="4" x2="18" y2="20"></line>`;
     requestAnimationFrame(drawWave);
   }
   playing = !playing;
@@ -61,28 +60,29 @@ function drawWave() {
   const height = canvas.height;
   ctx.clearRect(0, 0, width, height);
 
+  const barWidth = 5;
+  const barGap = 3;
+  const numBars = Math.floor(width / (barWidth + barGap));
   const progress = audio.currentTime / audio.duration;
-  const waveHeight = 10;
-  const frequency = 0.05;
-  const now = Date.now() / 100;
 
-  ctx.beginPath();
-  ctx.moveTo(0, height / 2);
+  const now = Date.now() / 200;
 
-  for (let x = 0; x < width; x++) {
-    const amp = x < width * progress ? 1 : 0.4;
-    const y = height / 2 + Math.sin(x * frequency + now) * waveHeight * amp;
-    ctx.lineTo(x, y);
+  for (let i = 0; i < numBars; i++) {
+    const amp = i < numBars * progress ? 1 : 0.4;
+    const barHeight = (Math.sin(i + now) * 0.5 + 0.5) * (height * 0.9) * amp;
+
+    const x = i * (barWidth + barGap);
+    const y = (height - barHeight) / 2;
+
+    ctx.fillStyle = '#b88a20';
+    ctx.fillRect(x, y, barWidth, barHeight);
   }
-
-  ctx.strokeStyle = '#b88a20';
-  ctx.lineWidth = 3;
-  ctx.stroke();
 
   if (!audio.paused) {
     requestAnimationFrame(drawWave);
   }
 }
+
 
 
 
