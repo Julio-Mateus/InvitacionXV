@@ -260,7 +260,7 @@ section.animar {
 
 .agradecer{
   background: url('assets/fondo-mensaje1.jpg') no-repeat center/cover;
-  height: 68vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -509,7 +509,7 @@ ul li img {
 /* Confirmar */
 .confirmar {
   background: url('assets/fondo3.jpg') no-repeat center/cover;
-  height: 25vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -526,7 +526,7 @@ ul li img {
 /* Vestimenta */
 .vestimenta {
   background: url('assets/fondo3.jpg') no-repeat center/cover;
-  height: 55vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -543,7 +543,7 @@ ul li img {
 /* Lluvia de sobres */
 .sobreslluvia {
   background: url('assets/fondo3.jpg') no-repeat center/cover;
-  height: 42vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -593,7 +593,7 @@ img {
 
 .playlist {
   background: url('assets/fondo3.jpg') no-repeat center/cover;
-  height: 38vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -625,7 +625,7 @@ img {
   background: #f7c873;
   border: none;
   padding: 0.6em;
-  border-radius: 50%;
+  border-radius: 1.5em;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -648,8 +648,8 @@ img {
 /* Sección de agradecimiento */
 
 .agradecimientos {
-  background: url('assets/fondo-mensaje1.jpg') no-repeat center/cover;
-  height: 25vh;
+  background: url('assets/fondo3.jpg') no-repeat center/cover;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -657,10 +657,10 @@ img {
 }
 .agradecimientos h1 {
   font-family: "Tangerine", cursive;
-  font-size: 2em;
+  font-size: 4em;
   color: #111;
   margin-bottom: 0.5em;
-  text-shadow: 0 0 5px #fff, 0 0 10px #ccc;
+  text-shadow: 0 0 5px #0c0c0c, 0 0 10px #b6b4ad;
 }
 
 /* Estilo para la galería */
@@ -669,7 +669,7 @@ img {
   flex-direction: column; /* Coloca las imágenes en una columna */
   justify-content: center;
   align-items: center; /* Alinea las imágenes al centro */
-  gap: 2em; /* Espacio entre imágenes */
+  gap: 1.5em; /* Espacio entre imágenes */
   margin: 4em 0;
   overflow: hidden;
 }
@@ -693,7 +693,7 @@ img {
   left: 5px;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, hwb(51 6% 20% / 0.8), rgba(212, 12, 12, 0));
+  background: linear-gradient(45deg, hwb(46 4% 10% / 0.8), rgb(255, 255, 255));
   opacity: 0;
   border-radius: 12px;
   animation: neón 3s infinite alternate;
@@ -713,7 +713,7 @@ img {
 /* Animación para las imágenes cuando se pasa el ratón */
 .galeria img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px rgb(224, 134, 49);
+  box-shadow: 0 0 30px rgb(236, 164, 95);
 }
 
 
